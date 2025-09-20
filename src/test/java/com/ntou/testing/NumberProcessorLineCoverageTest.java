@@ -164,60 +164,6 @@ public class NumberProcessorLineCoverageTest {
         // Line coverage: 100%
     }
     
-    /**
-     * 測試 isValidPassword 方法 - Line Coverage 100%
-     * 
-     * 程式行數分析：
-     * Line 1: public boolean isValidPassword(String password) {
-     * Line 2: if (password == null || password.length() < 6) {
-     * Line 3: return false;
-     * Line 4: }
-     * Line 5: boolean hasDigit = false;
-     * Line 6: boolean hasLetter = false;
-     * Line 7: for (int i = 0; i < password.length(); i++) {
-     * Line 8: char c = password.charAt(i);
-     * Line 9: if (Character.isDigit(c)) {
-     * Line 10: hasDigit = true;
-     * Line 11: } else if (Character.isLetter(c)) {
-     * Line 12: hasLetter = true;
-     * Line 13: }
-     * Line 14: }
-     * Line 15: return hasDigit && hasLetter;
-     * 
-     * 最少測試案例：4個
-     */
-    @Test
-    void testIsValidPassword_LineCoverage100() {
-        // Test Case 1: null 或太短密碼
-        // 1) Input values: password = "123"
-        // 2) Expected result: false
-        // 3) Test program's result: false
-        // 4) Criteria analysis: Line coverage - 測試案例涵蓋的lines: 1, 2, 3
-        assertThat(processor.isValidPassword("123")).isFalse();
-        
-        // Test Case 2: 只有數字
-        // 1) Input values: password = "123456"
-        // 2) Expected result: false
-        // 3) Test program's result: false
-        // 4) Criteria analysis: Line coverage - 測試案例涵蓋的lines: 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 14, 15
-        assertThat(processor.isValidPassword("123456")).isFalse();
-        
-        // Test Case 3: 只有字母
-        // 1) Input values: password = "abcdef"
-        // 2) Expected result: false
-        // 3) Test program's result: false
-        // 4) Criteria analysis: Line coverage - 測試案例涵蓋的lines: 1, 2, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15
-        assertThat(processor.isValidPassword("abcdef")).isFalse();
-        
-        // Test Case 4: 有效密碼
-        // 1) Input values: password = "abc123"
-        // 2) Expected result: true
-        // 3) Test program's result: true
-        // 4) Criteria analysis: Line coverage - 測試案例涵蓋的lines: 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-        assertThat(processor.isValidPassword("abc123")).isTrue();
-        
-        // Line coverage: 100%
-    }
     
     /**
      * 測試 complexBooleanLogic 方法 - Line Coverage 100%

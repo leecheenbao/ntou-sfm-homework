@@ -67,31 +67,6 @@
     }
     
     /**
-     * 檢查字串是否為有效密碼
-     * @param password 要檢查的密碼
-     * @return true 如果密碼有效，否則 false
-     */
-    public boolean isValidPassword(String password) { // Line 1
-<span class="fc bfc" id="L75" title="All 4 branches covered.">        if (password == null || password.length() &lt; 6) { // Line 2</span>
-<span class="fc" id="L76">            return false; // Line 3</span>
-        }
-        
-<span class="fc" id="L79">        boolean hasDigit = false; // Line 4</span>
-<span class="fc" id="L80">        boolean hasLetter = false; // Line 5</span>
-        
-<span class="fc bfc" id="L82" title="All 2 branches covered.">        for (int i = 0; i &lt; password.length(); i++) { // Line 6</span>
-<span class="fc" id="L83">            char c = password.charAt(i); // Line 7</span>
-<span class="fc bfc" id="L84" title="All 2 branches covered.">            if (Character.isDigit(c)) { // Line 8</span>
-<span class="fc" id="L85">                hasDigit = true; // Line 9</span>
-<span class="fc bfc" id="L86" title="All 2 branches covered.">            } else if (Character.isLetter(c)) { // Line 10</span>
-<span class="fc" id="L87">                hasLetter = true; // Line 11</span>
-            } // Line 12
-        } // Line 13
-        
-<span class="fc bfc" id="L91" title="All 4 branches covered.">        return hasDigit &amp;&amp; hasLetter; // Line 14</span>
-    }
-    
-    /**
      * 複雜的邏輯判斷函數 - 包含多個子條件
      * @param a 第一個布林值
      * @param b 第二個布林值
@@ -100,13 +75,13 @@
      * @return 邏輯運算結果
      */
     public boolean complexBooleanLogic(boolean a, boolean b, boolean c, boolean d) { // Line 1
-<span class="fc bfc" id="L103" title="All 8 branches covered.">        if ((a &amp;&amp; b) || (c &amp;&amp; d)) { // Line 2</span>
-<span class="fc" id="L104">            return true; // Line 3 - 簡化邏輯，因為 (a&amp;&amp;b)||(c&amp;&amp;d) 為 true 時，a||b||c||d 必定為 true</span>
+<span class="fc bfc" id="L78" title="All 8 branches covered.">        if ((a &amp;&amp; b) || (c &amp;&amp; d)) { // Line 2</span>
+<span class="fc" id="L79">            return true; // Line 3 - 簡化邏輯，因為 (a&amp;&amp;b)||(c&amp;&amp;d) 為 true 時，a||b||c||d 必定為 true</span>
         } else { // Line 4
-<span class="fc bfc" id="L106" title="All 4 branches covered.">            if (a || b) { // Line 5</span>
-<span class="fc bfc" id="L107" title="All 4 branches covered.">                return c || d; // Line 6</span>
+<span class="fc bfc" id="L81" title="All 4 branches covered.">            if (a || b) { // Line 5</span>
+<span class="fc bfc" id="L82" title="All 4 branches covered.">                return c || d; // Line 6</span>
             } else { // Line 7
-<span class="fc" id="L109">                return false; // Line 8</span>
+<span class="fc" id="L84">                return false; // Line 8</span>
             }
         }
     }
@@ -117,25 +92,25 @@
      * @return 小於等於 n 的質數個數
      */
     public int countPrimes(int n) { // Line 1
-<span class="fc bfc" id="L120" title="All 2 branches covered.">        if (n &lt; 2) { // Line 2</span>
-<span class="fc" id="L121">            return 0; // Line 3</span>
+<span class="fc bfc" id="L95" title="All 2 branches covered.">        if (n &lt; 2) { // Line 2</span>
+<span class="fc" id="L96">            return 0; // Line 3</span>
         }
         
-<span class="fc" id="L124">        int count = 0; // Line 4</span>
-<span class="fc bfc" id="L125" title="All 2 branches covered.">        for (int i = 2; i &lt;= n; i++) { // Line 5</span>
-<span class="fc" id="L126">            boolean isPrime = true; // Line 6</span>
-<span class="fc bfc" id="L127" title="All 2 branches covered.">            for (int j = 2; j * j &lt;= i; j++) { // Line 7</span>
-<span class="fc bfc" id="L128" title="All 2 branches covered.">                if (i % j == 0) { // Line 8</span>
-<span class="fc" id="L129">                    isPrime = false; // Line 9</span>
-<span class="fc" id="L130">                    break; // Line 10</span>
+<span class="fc" id="L99">        int count = 0; // Line 4</span>
+<span class="fc bfc" id="L100" title="All 2 branches covered.">        for (int i = 2; i &lt;= n; i++) { // Line 5</span>
+<span class="fc" id="L101">            boolean isPrime = true; // Line 6</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">            for (int j = 2; j * j &lt;= i; j++) { // Line 7</span>
+<span class="fc bfc" id="L103" title="All 2 branches covered.">                if (i % j == 0) { // Line 8</span>
+<span class="fc" id="L104">                    isPrime = false; // Line 9</span>
+<span class="fc" id="L105">                    break; // Line 10</span>
                 } // Line 11
             } // Line 12
-<span class="fc bfc" id="L133" title="All 2 branches covered.">            if (isPrime) { // Line 13</span>
-<span class="fc" id="L134">                count++; // Line 14</span>
+<span class="fc bfc" id="L108" title="All 2 branches covered.">            if (isPrime) { // Line 13</span>
+<span class="fc" id="L109">                count++; // Line 14</span>
             } // Line 15
         } // Line 16
         
-<span class="fc" id="L138">        return count; // Line 17</span>
+<span class="fc" id="L113">        return count; // Line 17</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -185,7 +185,6 @@ show_test_stats() {
 show_report_locations() {
     echo -e "${BLUE}報告位置:${NC}"
     echo -e "JaCoCo 覆蓋率報告: ${CYAN}report/jacoco/index.html${NC}"
-    echo -e "PIT 變異測試報告: ${CYAN}report/pit/[timestamp]/index.html${NC}"
     echo -e "Maven 測試報告: ${CYAN}report/surefire/${NC}"
     echo
 }

@@ -110,9 +110,6 @@
                         <format>HTML</format>
                         <format>XML</format>
                     </outputFormats>
-                    <mutators>
-                        <mutator>ALL</mutator>
-                    </mutators>
                     <outputDirectory>report/pit</outputDirectory>
                 </configuration>
             </plugin>

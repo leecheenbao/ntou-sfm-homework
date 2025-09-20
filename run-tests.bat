@@ -328,7 +328,6 @@ goto :show_report_locations
 :show_report_locations
 echo 報告位置:
 echo JaCoCo 覆蓋率報告: report\jacoco\index.html
-echo PIT 變異測試報告: report\pit\[timestamp]\index.html
 echo Maven 測試報告: report\surefire\
 echo.
 

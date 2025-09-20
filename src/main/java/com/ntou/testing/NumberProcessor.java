@@ -67,31 +67,6 @@ public class NumberProcessor {
     }
     
     /**
-     * 檢查字串是否為有效密碼
-     * @param password 要檢查的密碼
-     * @return true 如果密碼有效，否則 false
-     */
-    public boolean isValidPassword(String password) { // Line 1
-        if (password == null || password.length() < 6) { // Line 2
-            return false; // Line 3
-        }
-        
-        boolean hasDigit = false; // Line 4
-        boolean hasLetter = false; // Line 5
-        
-        for (int i = 0; i < password.length(); i++) { // Line 6
-            char c = password.charAt(i); // Line 7
-            if (Character.isDigit(c)) { // Line 8
-                hasDigit = true; // Line 9
-            } else if (Character.isLetter(c)) { // Line 10
-                hasLetter = true; // Line 11
-            } // Line 12
-        } // Line 13
-        
-        return hasDigit && hasLetter; // Line 14
-    }
-    
-    /**
      * 複雜的邏輯判斷函數 - 包含多個子條件
      * @param a 第一個布林值
      * @param b 第二個布林值
