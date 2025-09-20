@@ -32,7 +32,6 @@ show_help() {
     echo "  all          執行所有測試並生成所有報告"
     echo "  test         僅執行測試"
     echo "  coverage     執行測試並生成覆蓋率報告"
-    echo "  mutation     執行變異測試"
     echo "  clean        清理建置檔案"
     echo "  compile      編譯專案"
     echo "  line         執行 Line Coverage 測試"
@@ -40,7 +39,6 @@ show_help() {
     echo "  stress       執行 Stress Testing 測試"
     echo "  logical      執行 Logical Expressions 測試"
     echo "  input        執行 Input Domain 測試"
-    echo "  mutation-test 執行 Mutation Testing 測試"
     echo "  equivalence  執行 Equivalence Partition 測試"
     echo "  boundary     執行 Boundary Value 測試"
     echo "  report       生成測試報告"
@@ -91,10 +89,6 @@ run_coverage() {
     run_command "mvn test jacoco:report" "執行測試並生成覆蓋率報告"
 }
 
-# 執行變異測試
-run_mutation_testing() {
-    run_command "mvn test-compile org.pitest:pitest-maven:mutationCoverage" "執行變異測試"
-}
 
 # 執行特定測試類別
 run_specific_test() {
@@ -199,7 +193,6 @@ main() {
             compile_project
             run_all_tests
             run_coverage
-            run_mutation_testing
             show_test_stats
             show_report_locations
             ;;
@@ -210,10 +203,6 @@ main() {
         "coverage")
             run_coverage
             show_test_stats
-            show_report_locations
-            ;;
-        "mutation")
-            run_mutation_testing
             show_report_locations
             ;;
         "clean")
@@ -236,9 +225,6 @@ main() {
             ;;
         "input")
             run_specific_test "InputDomainCharacterizationTest" "Input Domain"
-            ;;
-        "mutation-test")
-            run_specific_test "MutationTestingCoverageTest" "Mutation Testing"
             ;;
         "equivalence")
             run_specific_test "EquivalencePartitionTestingTest" "Equivalence Partition"

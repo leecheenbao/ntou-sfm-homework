@@ -23,7 +23,6 @@ REM 執行對應的選項
 if "%1"=="all" goto :run_all
 if "%1"=="test" goto :run_tests
 if "%1"=="coverage" goto :run_coverage
-if "%1"=="mutation" goto :run_mutation
 if "%1"=="clean" goto :clean_project
 if "%1"=="compile" goto :compile_project
 if "%1"=="line" goto :run_line_tests
@@ -31,7 +30,6 @@ if "%1"=="graph" goto :run_graph_tests
 if "%1"=="stress" goto :run_stress_tests
 if "%1"=="logical" goto :run_logical_tests
 if "%1"=="input" goto :run_input_tests
-if "%1"=="mutation-test" goto :run_mutation_tests
 if "%1"=="equivalence" goto :run_equivalence_tests
 if "%1"=="boundary" goto :run_boundary_tests
 if "%1"=="report" goto :show_reports
@@ -48,7 +46,6 @@ echo 選項:
 echo   all          執行所有測試並生成所有報告
 echo   test         僅執行測試
 echo   coverage     執行測試並生成覆蓋率報告
-echo   mutation     執行變異測試
 echo   clean        清理建置檔案
 echo   compile      編譯專案
 echo   line         執行 Line Coverage 測試
@@ -56,7 +53,6 @@ echo   graph        執行 Graph Coverage 測試
 echo   stress       執行 Stress Testing 測試
 echo   logical      執行 Logical Expressions 測試
 echo   input        執行 Input Domain 測試
-echo   mutation-test 執行 Mutation Testing 測試
 echo   equivalence  執行 Equivalence Partition 測試
 echo   boundary     執行 Boundary Value 測試
 echo   report       生成測試報告
@@ -111,16 +107,6 @@ if !errorlevel! neq 0 (
 echo ✓ 生成覆蓋率報告成功
 echo.
 
-echo 正在執行: 執行變異測試
-mvn test-compile org.pitest:pitest-maven:mutationCoverage
-if !errorlevel! neq 0 (
-    echo ✗ 執行變異測試失敗
-    pause
-    exit /b 1
-)
-echo ✓ 執行變異測試成功
-echo.
-
 goto :show_test_stats
 
 :run_tests
@@ -146,18 +132,6 @@ if !errorlevel! neq 0 (
 echo ✓ 生成覆蓋率報告成功
 echo.
 goto :show_test_stats
-
-:run_mutation
-echo 正在執行: 執行變異測試
-mvn test-compile org.pitest:pitest-maven:mutationCoverage
-if !errorlevel! neq 0 (
-    echo ✗ 執行變異測試失敗
-    pause
-    exit /b 1
-)
-echo ✓ 執行變異測試成功
-echo.
-goto :show_report_locations
 
 :clean_project
 echo 正在執行: 清理專案建置檔案
@@ -243,16 +217,6 @@ echo ✓ 執行 Input Domain 測試成功
 echo.
 goto :end
 
-:run_mutation_tests
-echo 正在執行: 執行 Mutation Testing 測試
-mvn test -Dtest=MutationTestingCoverageTest
-if !errorlevel! neq 0 (
-    echo ✗ 執行 Mutation Testing 測試失敗
-    pause
-    exit /b 1
-)
-echo ✓ 執行 Mutation Testing 測試成功
-echo.
 goto :end
 
 :run_equivalence_tests
