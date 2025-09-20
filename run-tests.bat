@@ -311,13 +311,13 @@ goto :show_report_locations
 echo 測試統計信息:
 echo.
 
-if exist "target\surefire-reports" (
+if exist "report\surefire" (
     set /a test_files=0
-    for %%f in (target\surefire-reports\*.xml) do set /a test_files+=1
+    for %%f in (report\surefire\*.xml) do set /a test_files+=1
     echo 測試檔案數量: !test_files!
     
     REM 這裡可以添加更詳細的統計信息解析
-    echo 詳細統計信息請查看 target\surefire-reports\ 目錄
+    echo 詳細統計信息請查看 report\surefire\ 目錄
 ) else (
     echo 測試報告不存在，請先執行測試
 )

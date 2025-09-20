@@ -140,8 +140,8 @@ generate_reports() {
 show_test_stats() {
     echo -e "${BLUE}測試統計信息:${NC}"
     
-    if [ -d "target/surefire-reports" ]; then
-        local test_files=$(find target/surefire-reports -name "*.xml" -type f | wc -l)
+    if [ -d "report/surefire" ]; then
+        local test_files=$(find report/surefire -name "*.xml" -type f | wc -l)
         echo -e "測試檔案數量: ${GREEN}${test_files}${NC}"
         
         # 提取測試統計信息
@@ -150,7 +150,7 @@ show_test_stats() {
         local errors=0
         local skipped=0
         
-        for file in target/surefire-reports/*.xml; do
+        for file in report/surefire/*.xml; do
             if [ -f "$file" ]; then
                 local tests=$(grep -o 'tests="[0-9]*"' "$file" | grep -o '[0-9]*' | head -1)
                 local failures=$(grep -o 'failures="[0-9]*"' "$file" | grep -o '[0-9]*' | head -1)
