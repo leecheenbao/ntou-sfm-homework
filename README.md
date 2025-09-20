@@ -9,7 +9,6 @@
 - **Stress Testing** - 壓力測試覆蓋率
 - **Logical Expressions Coverage** - 邏輯表達式覆蓋率 (Predicate, Clause, Combinatorial)
 - **Input Domain Characterization** - 輸入域特徵化測試
-- **Mutation Testing** - 變異測試覆蓋率
 - **Equivalence Partition Testing** - 等價分割測試
 - **Boundary Value Testing** - 邊界值測試
 
@@ -64,7 +63,6 @@ run-tests.bat all
 | `all` | 執行所有測試並生成所有報告 | `./run-tests.sh all` |
 | `test` | 僅執行測試 | `./run-tests.sh test` |
 | `coverage` | 執行測試並生成覆蓋率報告 | `./run-tests.sh coverage` |
-| `mutation` | 執行變異測試 | `./run-tests.sh mutation` |
 | `clean` | 清理建置檔案 | `./run-tests.sh clean` |
 | `compile` | 編譯專案 | `./run-tests.sh compile` |
 | `line` | 執行 Line Coverage 測試 | `./run-tests.sh line` |
@@ -72,7 +70,6 @@ run-tests.bat all
 | `stress` | 執行 Stress Testing 測試 | `./run-tests.sh stress` |
 | `logical` | 執行 Logical Expressions 測試 | `./run-tests.sh logical` |
 | `input` | 執行 Input Domain 測試 | `./run-tests.sh input` |
-| `mutation-test` | 執行 Mutation Testing 測試 | `./run-tests.sh mutation-test` |
 | `equivalence` | 執行 Equivalence Partition 測試 | `./run-tests.sh equivalence` |
 | `boundary` | 執行 Boundary Value 測試 | `./run-tests.sh boundary` |
 | `report` | 生成測試報告 | `./run-tests.sh report` |
