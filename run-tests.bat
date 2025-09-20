@@ -283,23 +283,23 @@ goto :end
 echo 正在生成測試報告...
 echo.
 
-if exist "target\site\jacoco\index.html" (
+if exist "report\jacoco\index.html" (
     echo ✓ JaCoCo 覆蓋率報告已生成
-    echo    位置: target\site\jacoco\index.html
+    echo    位置: report\jacoco\index.html
 ) else (
     echo ⚠ JaCoCo 報告不存在，請先執行覆蓋率測試
 )
 
-if exist "target\pit-reports" (
+if exist "report\pit" (
     echo ✓ PIT 變異測試報告已生成
-    echo    位置: target\pit-reports\[timestamp]\index.html
+    echo    位置: report\pit\[timestamp]\index.html
 ) else (
     echo ⚠ PIT 報告不存在，請先執行變異測試
 )
 
-if exist "target\surefire-reports" (
+if exist "report\surefire" (
     echo ✓ Maven Surefire 測試報告已生成
-    echo    位置: target\surefire-reports\
+    echo    位置: report\surefire\
 ) else (
     echo ⚠ Surefire 報告不存在，請先執行測試
 )
@@ -327,9 +327,9 @@ goto :show_report_locations
 
 :show_report_locations
 echo 報告位置:
-echo JaCoCo 覆蓋率報告: target\site\jacoco\index.html
-echo PIT 變異測試報告: target\pit-reports\[timestamp]\index.html
-echo Maven 測試報告: target\surefire-reports\
+echo JaCoCo 覆蓋率報告: report\jacoco\index.html
+echo PIT 變異測試報告: report\pit\[timestamp]\index.html
+echo Maven 測試報告: report\surefire\
 echo.
 
 :end

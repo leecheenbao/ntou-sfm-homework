@@ -140,14 +140,21 @@ public class NumberProcessorLineCoverageTest {
         // 4) Criteria analysis: Line coverage - 測試案例涵蓋的lines: 1, 2, 3
         assertThat(processor.findMax(null)).isEqualTo(Integer.MIN_VALUE);
         
-        // Test Case 2: 單元素陣列
+        // Test Case 2: 空陣列
+        // 1) Input values: numbers = []
+        // 2) Expected result: Integer.MIN_VALUE
+        // 3) Test program's result: Integer.MIN_VALUE
+        // 4) Criteria analysis: Line coverage - 測試案例涵蓋的lines: 1, 2, 3
+        assertThat(processor.findMax(new int[]{})).isEqualTo(Integer.MIN_VALUE);
+        
+        // Test Case 3: 單元素陣列
         // 1) Input values: numbers = [5]
         // 2) Expected result: 5
         // 3) Test program's result: 5
         // 4) Criteria analysis: Line coverage - 測試案例涵蓋的lines: 1, 2, 4, 5, 6, 11 (迴圈不執行)
         assertThat(processor.findMax(new int[]{5})).isEqualTo(5);
         
-        // Test Case 3: 多元素陣列，有更新最大值
+        // Test Case 4: 多元素陣列，有更新最大值
         // 1) Input values: numbers = [1, 5, 3]
         // 2) Expected result: 5
         // 3) Test program's result: 5

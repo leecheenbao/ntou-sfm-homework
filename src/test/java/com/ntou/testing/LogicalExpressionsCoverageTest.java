@@ -158,6 +158,27 @@ public class LogicalExpressionsCoverageTest {
         // 4) Criteria analysis: Combinatorial coverage - FFF
         assertThat(calculator.complexLogic(false, false, false)).isFalse();
         
+        // Additional Test Case: TFF (確保內層條件的所有分支都被覆蓋)
+        // 1) Input values: x=true, y=false, z=false
+        // 2) Expected result: false (外層條件: true && false || false = false)
+        // 3) Test program's result: false
+        // 4) Criteria analysis: Combinatorial coverage - TFF，確保分支覆蓋率 100%
+        assertThat(calculator.complexLogic(true, false, false)).isFalse();
+        
+        // Additional Test Case: FFT (確保 y && z 中 y=false 的分支被覆蓋)
+        // 1) Input values: x=false, y=false, z=true
+        // 2) Expected result: false (外層條件: false && false || true = true，內層條件: false || false && true = false)
+        // 3) Test program's result: false
+        // 4) Criteria analysis: 確保 x || y && z 中所有分支都被覆蓋
+        assertThat(calculator.complexLogic(false, false, true)).isFalse();
+        
+        // Additional Test Case: FTF (確保 y && z 中 y=true, z=false 的分支被覆蓋)
+        // 1) Input values: x=false, y=true, z=false
+        // 2) Expected result: false (外層條件: false && true || false = false)
+        // 3) Test program's result: false
+        // 4) Criteria analysis: 確保 x || y && z 中 y=true, z=false 的分支被覆蓋
+        assertThat(calculator.complexLogic(false, true, false)).isFalse();
+        
         // Combinatorial coverage: 100%
     }
     

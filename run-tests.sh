@@ -109,16 +109,16 @@ generate_reports() {
     echo
     
     # 生成 JaCoCo 報告
-    if [ -f "target/site/jacoco/index.html" ]; then
+    if [ -f "report/jacoco/index.html" ]; then
         echo -e "${GREEN}✓ JaCoCo 覆蓋率報告已生成${NC}"
-        echo -e "   位置: ${CYAN}target/site/jacoco/index.html${NC}"
+        echo -e "   位置: ${CYAN}report/jacoco/index.html${NC}"
     else
         echo -e "${YELLOW}⚠ JaCoCo 報告不存在，請先執行覆蓋率測試${NC}"
     fi
     
     # 檢查 PIT 報告
-    if [ -d "target/pit-reports" ]; then
-        local latest_report=$(find target/pit-reports -name "index.html" -type f | head -1)
+    if [ -d "report/pit" ]; then
+        local latest_report=$(find report/pit -name "index.html" -type f | head -1)
         if [ -n "$latest_report" ]; then
             echo -e "${GREEN}✓ PIT 變異測試報告已生成${NC}"
             echo -e "   位置: ${CYAN}${latest_report}${NC}"
@@ -128,9 +128,9 @@ generate_reports() {
     fi
     
     # 檢查 Surefire 報告
-    if [ -d "target/surefire-reports" ]; then
+    if [ -d "report/surefire" ]; then
         echo -e "${GREEN}✓ Maven Surefire 測試報告已生成${NC}"
-        echo -e "   位置: ${CYAN}target/surefire-reports/${NC}"
+        echo -e "   位置: ${CYAN}report/surefire/${NC}"
     fi
     
     echo
@@ -184,9 +184,9 @@ show_test_stats() {
 # 顯示報告位置
 show_report_locations() {
     echo -e "${BLUE}報告位置:${NC}"
-    echo -e "JaCoCo 覆蓋率報告: ${CYAN}target/site/jacoco/index.html${NC}"
-    echo -e "PIT 變異測試報告: ${CYAN}target/pit-reports/[timestamp]/index.html${NC}"
-    echo -e "Maven 測試報告: ${CYAN}target/surefire-reports/${NC}"
+    echo -e "JaCoCo 覆蓋率報告: ${CYAN}report/jacoco/index.html${NC}"
+    echo -e "PIT 變異測試報告: ${CYAN}report/pit/[timestamp]/index.html${NC}"
+    echo -e "Maven 測試報告: ${CYAN}report/surefire/${NC}"
     echo
 }
 

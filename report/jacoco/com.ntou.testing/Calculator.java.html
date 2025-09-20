@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Calculator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Software Testing Homework</a> &gt; <a href="index.source.html" class="el_package">com.ntou.testing</a> &gt; <span class="el_source">Calculator.java</span></div><h1>Calculator.java</h1><pre class="source lang-java linenums">package com.ntou.testing;
+
+/**
+ * 計算機類別 - 包含條件判斷和迴圈的測試程式範例
+ * 用於軟體正規方法期末報告項目
+ */
+<span class="fc" id="L7">public class Calculator {</span>
+    
+    /**
+     * 判斷數字是否為正數
+     * @param i 要判斷的整數
+     * @return true 如果 i &gt;= 0，否則 false
+     */
+    public boolean isPositive(int i) { // Line 1
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        if (i &gt;= 0) { // Line 2</span>
+<span class="fc" id="L16">            return true; // Line 3</span>
+        } else { // Line 4
+<span class="fc" id="L18">            return false; // Line 5</span>
+        }
+    }
+    
+    /**
+     * 計算階乘
+     * @param n 非負整數
+     * @return n 的階乘
+     */
+    public long factorial(int n) { // Line 1
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        if (n &lt; 0) { // Line 2</span>
+<span class="fc" id="L29">            return -1; // Line 3 (錯誤值)</span>
+        }
+        
+<span class="fc" id="L32">        long result = 1; // Line 4</span>
+<span class="fc" id="L33">        int i = 1; // Line 5</span>
+        
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        while (i &lt;= n) { // Line 6</span>
+<span class="fc" id="L36">            result *= i; // Line 7</span>
+<span class="fc" id="L37">            i++; // Line 8</span>
+        } // Line 9
+        
+<span class="fc" id="L40">        return result; // Line 10</span>
+    }
+    
+    /**
+     * 計算兩個數的最大公約數
+     * @param a 第一個整數
+     * @param b 第二個整數
+     * @return a 和 b 的最大公約數
+     */
+    public int gcd(int a, int b) { // Line 1
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        if (a &lt; 0) a = -a; // Line 2</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        if (b &lt; 0) b = -b; // Line 3</span>
+        
+<span class="fc bfc" id="L53" title="All 4 branches covered.">        if (a == 0 &amp;&amp; b == 0) { // Line 4</span>
+<span class="fc" id="L54">            return -1; // Line 5 (錯誤值)</span>
+        }
+        
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        if (a == 0) return b; // Line 6</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        if (b == 0) return a; // Line 7</span>
+        
+<span class="fc bfc" id="L60" title="All 2 branches covered.">        while (b != 0) { // Line 8</span>
+<span class="fc" id="L61">            int temp = b; // Line 9</span>
+<span class="fc" id="L62">            b = a % b; // Line 10</span>
+<span class="fc" id="L63">            a = temp; // Line 11</span>
+<span class="fc" id="L64">        } // Line 12</span>
+        
+<span class="fc" id="L66">        return a; // Line 13</span>
+    }
+    
+    /**
+     * 複雜條件判斷函數 - 用於邏輯表達式測試
+     * @param x 第一個條件
+     * @param y 第二個條件
+     * @param z 第三個條件
+     * @return 邏輯運算結果
+     */
+    public boolean complexLogic(boolean x, boolean y, boolean z) { // Line 1
+<span class="fc bfc" id="L77" title="All 6 branches covered.">        if (x &amp;&amp; y || z) { // Line 2 (複合邏輯條件)</span>
+<span class="pc bpc" id="L78" title="1 of 6 branches missed.">            if (x || y &amp;&amp; z) { // Line 3 (另一個複合邏輯條件)</span>
+<span class="fc" id="L79">                return true; // Line 4</span>
+            } else { // Line 5
+<span class="fc" id="L81">                return false; // Line 6</span>
+            }
+        } else { // Line 7
+<span class="fc" id="L84">            return false; // Line 8</span>
+        }
+    }
+    
+    /**
+     * 陣列處理函數 - 用於輸入域測試
+     * @param numbers 整數陣列
+     * @return 處理結果
+     */
+    public String processArray(int[] numbers) { // Line 1
+<span class="fc bfc" id="L94" title="All 2 branches covered.">        if (numbers == null) { // Line 2</span>
+<span class="fc" id="L95">            return &quot;NULL&quot;; // Line 3</span>
+        }
+        
+<span class="fc bfc" id="L98" title="All 2 branches covered.">        if (numbers.length == 0) { // Line 4</span>
+<span class="fc" id="L99">            return &quot;EMPTY&quot;; // Line 5</span>
+        }
+        
+<span class="fc bfc" id="L102" title="All 2 branches covered.">        if (numbers.length == 1) { // Line 6</span>
+<span class="fc" id="L103">            return &quot;SINGLE&quot;; // Line 7</span>
+        }
+        
+<span class="fc" id="L106">        return &quot;MULTIPLE&quot;; // Line 8</span>
+    }
+    
+    /**
+     * 邊界值測試函數
+     * @param value 要測試的值
+     * @return 處理結果
+     */
+    public String boundaryTest(int value) { // Line 1
+<span class="fc bfc" id="L115" title="All 2 branches covered.">        if (value &lt; 10) { // Line 2</span>
+<span class="fc" id="L116">            return &quot;LOW&quot;; // Line 3</span>
+<span class="fc bfc" id="L117" title="All 2 branches covered.">        } else if (value == 10) { // Line 4</span>
+<span class="fc" id="L118">            return &quot;BOUNDARY_LOW&quot;; // Line 5</span>
+<span class="fc bfc" id="L119" title="All 2 branches covered.">        } else if (value &lt; 100) { // Line 6</span>
+<span class="fc" id="L120">            return &quot;MIDDLE&quot;; // Line 7</span>
+<span class="fc bfc" id="L121" title="All 2 branches covered.">        } else if (value == 100) { // Line 8</span>
+<span class="fc" id="L122">            return &quot;BOUNDARY_HIGH&quot;; // Line 9</span>
+        } else { // Line 10
+<span class="fc" id="L124">            return &quot;HIGH&quot;; // Line 11</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

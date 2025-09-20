@@ -101,16 +101,12 @@ public class NumberProcessor {
      */
     public boolean complexBooleanLogic(boolean a, boolean b, boolean c, boolean d) { // Line 1
         if ((a && b) || (c && d)) { // Line 2
-            if (a || b || c || d) { // Line 3
-                return true; // Line 4
-            } else { // Line 5
-                return false; // Line 6
-            }
-        } else { // Line 7
-            if (a || b) { // Line 8
-                return c || d; // Line 9
-            } else { // Line 10
-                return false; // Line 11
+            return true; // Line 3 - 簡化邏輯，因為 (a&&b)||(c&&d) 為 true 時，a||b||c||d 必定為 true
+        } else { // Line 4
+            if (a || b) { // Line 5
+                return c || d; // Line 6
+            } else { // Line 7
+                return false; // Line 8
             }
         }
     }

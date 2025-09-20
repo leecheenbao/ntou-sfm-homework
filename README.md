@@ -1,6 +1,29 @@
-# 測試腳本使用說明
+# 軟體測試專案 - 測試腳本使用說明
 
-## 📋 概述
+## 🎯 專案概覽
+
+本專案是一個完整的軟體測試範例，展示了各種測試覆蓋率技術的實現，包括：
+
+- **Line Coverage** - 行覆蓋率測試
+- **Graph Coverage** - 圖覆蓋率測試 (Edge, Edge-Pair, Path Coverage)
+- **Stress Testing** - 壓力測試覆蓋率
+- **Logical Expressions Coverage** - 邏輯表達式覆蓋率 (Predicate, Clause, Combinatorial)
+- **Input Domain Characterization** - 輸入域特徵化測試
+- **Mutation Testing** - 變異測試覆蓋率
+- **Equivalence Partition Testing** - 等價分割測試
+- **Boundary Value Testing** - 邊界值測試
+
+### 📊 當前測試成果
+
+- **總測試數**: 59 個測試案例
+- **測試通過率**: 100% ✅
+- **指令覆蓋率**: 100% ✅
+- **分支覆蓋率**: 99% (107/108 覆蓋)
+- **行覆蓋率**: 100% ✅
+- **方法覆蓋率**: 100% ✅
+- **類別覆蓋率**: 100% ✅
+
+## 📋 腳本概述
 
 本專案提供了兩個測試執行腳本，讓您可以輕鬆執行各種測試和生成報告：
 
@@ -110,17 +133,37 @@ run-tests.bat all
 執行測試後，報告會生成在以下位置：
 
 ### JaCoCo 覆蓋率報告
-- **位置**: `target/site/jacoco/index.html`
+- **位置**: `report/jacoco/index.html`
 - **內容**: 行覆蓋率、分支覆蓋率、方法覆蓋率等詳細資訊
 - **開啟方式**: 在瀏覽器中開啟 HTML 檔案
 
+#### 覆蓋率報告截圖
+
+![JaCoCo 覆蓋率報告 - 套件總覽](image-1.png)
+
+**說明:**
+此截圖顯示了 `com.ntou.testing` 套件的 JaCoCo 程式碼覆蓋率報告總覽。主要資訊如下：
+
+- **NumberProcessor**: 指令覆蓋率 100%，分支覆蓋率 100%
+- **Calculator**: 指令覆蓋率 100%，分支覆蓋率 97% (有 1 個分支未覆蓋)
+- **總計**: 指令覆蓋率 100%，分支覆蓋率 99% (108 個分支中有 1 個未覆蓋)，行覆蓋率 100%，方法覆蓋率 100%，類別覆蓋率 100%
+
+![JaCoCo 覆蓋率報告 - 詳細類別](image-2.png)
+
+**說明:**
+此截圖顯示了 `com.ntou.testing` 套件的詳細覆蓋率報告。可以看到：
+
+- **NumberProcessor**: 完全達到 100% 覆蓋率 (指令、分支、行、方法、類別)
+- **Calculator**: 指令覆蓋率 100%，但分支覆蓋率為 97%，表示還有一個分支未被測試覆蓋
+- 整體專案已達到非常高的覆蓋率水準，僅差最後 1% 即可達到完美的 100% 覆蓋率
+
 ### PIT 變異測試報告
-- **位置**: `target/pit-reports/[timestamp]/index.html`
+- **位置**: `report/pit/[timestamp]/index.html`
 - **內容**: 變異測試結果、殺死率統計等
 - **開啟方式**: 在瀏覽器中開啟 HTML 檔案
 
 ### Maven 測試報告
-- **位置**: `target/surefire-reports/`
+- **位置**: `report/surefire/`
 - **內容**: 測試執行結果、失敗測試詳情等
 - **格式**: XML 和 TXT 檔案
 
@@ -143,7 +186,7 @@ run-tests.bat all
 
 4. **測試失敗**
    - 檢查控制台輸出中的錯誤信息
-   - 查看 `target/surefire-reports/` 中的詳細報告
+   - 查看 `report/surefire/` 中的詳細報告
 
 ### 除錯模式
 
@@ -189,3 +232,5 @@ mvn -X test
 ---
 
 **注意**: 請確保在執行腳本前，專案目錄結構完整，且所有必要的測試檔案都存在。
+
+
