@@ -5,14 +5,20 @@
 ```mermaid
 flowchart TD
     Start([開始]) --> Input["接收參數 number"]
-    Input --> Check1{"number > 0?"}
-    Check1 -->|是| Return1["return POSITIVE"]
+    Input --> Check1{"number < 0?"}
+    Check1 -->|是| Return1["return NEGATIVE"]
     Check1 -->|否| Check2{"number == 0?"}
     Check2 -->|是| Return2["return ZERO"]
-    Check2 -->|否| Return3["return NEGATIVE"]
+    Check2 -->|否| Check3{"number <= 10?"}
+    Check3 -->|是| Return3["return SMALL"]
+    Check3 -->|否| Check4{"number <= 100?"}
+    Check4 -->|是| Return4["return MEDIUM"]
+    Check4 -->|否| Return5["return LARGE"]
     Return1 --> End([結束])
     Return2 --> End
     Return3 --> End
+    Return4 --> End
+    Return5 --> End
 ```
 
 ## 2. sumArray 方法執行流程圖
