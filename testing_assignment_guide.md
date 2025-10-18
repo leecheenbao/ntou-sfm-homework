@@ -13,10 +13,6 @@
 
 ## 1. Line Coverage (行覆蓋率)
 
-### 📅 截止日期
-- **碩士**: 10/3
-- **碩專**: 10/18
-
 ### 🎯 測試目標
 使用**最少的測試案例**達到測試目標涵蓋率 **100%**
 
@@ -92,10 +88,6 @@ public String classifyNumber(int number) { // Line 1
 
 ### 2.1 Edge Coverage (邊覆蓋率)
 
-#### 📅 截止日期
-- **碩士**: 10/17
-- **碩專**: 10/18
-
 #### 🎯 測試目標
 涵蓋所有的邊 (Edges)
 
@@ -151,10 +143,6 @@ public String classifyNumber(int number) { // Line 1
 
 ### 2.2 Edge-Pair Coverage (邊對覆蓋率)
 
-#### 📅 截止日期
-- **碩士**: 10/17
-- **碩專**: 10/18
-
 #### 🎯 測試目標
 涵蓋所有相鄰的邊對 (Edge Pairs)
 
@@ -168,10 +156,6 @@ public String classifyNumber(int number) { // Line 1
 ---
 
 ### 2.3 Path Coverage (路徑覆蓋率)
-
-#### 📅 截止日期
-- **碩士**: 10/17
-- **碩專**: 11/18
 
 #### 🎯 測試目標
 涵蓋所有可能的路徑
@@ -197,10 +181,6 @@ public String classifyNumber(int number) { // Line 1
 ## 3. Stress Testing Coverage (壓力測試)
 
 > 參考: Testing-Introduction.ppt p.50
-
-### 📅 截止日期
-- **碩士**: 11/7
-- **碩專**: 11/8
 
 ### 🎯 測試目標
 **極端情況測試** - 測試系統在極端條件下的行為
@@ -369,10 +349,6 @@ public boolean complexBooleanLogic(boolean a, boolean b, boolean c, boolean d) {
 
 ### 4.1 Predicate Coverage (述詞覆蓋率)
 
-#### 📅 截止日期
-- **碩士**: 11/7
-- **碩專**: 11/8
-
 #### 🎯 測試目標
 **整個條件判斷式的 True 和 False 都要測試過**
 
@@ -397,10 +373,6 @@ public boolean complexBooleanLogic(boolean a, boolean b, boolean c, boolean d) {
 ---
 
 ### 4.2 Clause Coverage (子句覆蓋率)
-
-#### 📅 截止日期
-- **碩士**: 11/7
-- **碩專**: 11/15
 
 #### 🎯 測試目標
 **每個子條件的 True 和 False 都要測試過**
@@ -428,10 +400,6 @@ public boolean complexBooleanLogic(boolean a, boolean b, boolean c, boolean d) {
 ---
 
 ### 4.3 Combinatorial Coverage (組合覆蓋率)
-
-#### 📅 截止日期
-- **碩士**: 11/14
-- **碩專**: 11/15
 
 #### 🎯 測試目標
 **每個子條件 True/False 的全部排列組合都要測試過**
@@ -503,10 +471,6 @@ public boolean complexBooleanLogic(boolean a, boolean b, boolean c, boolean d) {
 ## 5. Input Domain Characterization (輸入域特徵化)
 
 > 參考: Testing-Introduction.ppt p.65
-
-### 📅 截止日期
-- **碩士**: 11/21
-- **碩專**: 11/22
 
 ### 🎯 測試策略
 **先根據資料的特性分成幾個不同的類別**
@@ -655,10 +619,6 @@ public boolean complexBooleanLogic(boolean a, boolean b, boolean c, boolean d) {
 ## 6. Mutation Testing Coverage (變異測試)
 
 > 參考: Testing-Introduction.ppt p.66
-
-### 📅 截止日期
-- **碩士**: 11/28
-- **碩專**: 11/29
 
 ### 🎯 測試目標
 **評估測試案例的品質** - 測試是否能夠偵測到程式碼的變異
