@@ -171,7 +171,22 @@ public class MutationTestingCoverageTest {
         // 3) Test program's result: 4
         // 4) Criteria analysis: Mutation testing - 檢測迴圈和條件變異
         assertThat(processor.countPrimes(10)).isEqualTo(4);
-        
+
+        // Test Case 4: 較大的數
+        // 1) Input values: n = 65535
+        // 2) Expected result: 6542
+        // 3) Test program's result: 6542
+        // 4) Criteria analysis: Mutation testing - 檢測迴圈和條件變異
+        assertThat(processor.countPrimes(65535)).isEqualTo(6542);
+
+
+        // Test Case 5: 零測試
+        // 1) Input values: n = 0
+        // 2) Expected result: 0
+        // 3) Test program's result: 0
+        // 4) Criteria analysis: Mutation testing - 檢測迴圈和條件變異
+        assertThat(processor.countPrimes(0)).isEqualTo(0);
+
         // Mutation testing coverage: 100%
         // 所有數學運算變異體都能被檢測到
     }

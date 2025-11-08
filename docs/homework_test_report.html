@@ -848,7 +848,7 @@ hue-6-2: #e6c07b
     }
 </code></pre>
 <h2 id="測試案例詳解最小集合達成-100-覆蓋">測試案例詳解（最小集合達成 100% 覆蓋）</h2>
-<h3 id="測試案例最小集合達成-100-覆蓋">測試案例（最小集合達成 100% 覆蓋）</h3>
+<h3 id="測試案例最小集合達成-100-覆蓋變異測試延伸">測試案例（最小集合達成 100% 覆蓋＋變異測試延伸）</h3>
 <ul>
 <li>案例 1：<code>n = 1</code>
 <ul>
@@ -874,21 +874,47 @@ hue-6-2: #e6c07b
 <li>2-4) criteria analysis：覆蓋內層 <code>if (i % j == 0)</code> true/false 分支、<code>break</code> 路徑、<code>if (isPrime)</code> true/false，涵蓋所有迴圈路徑（涵蓋行：1-18）</li>
 </ul>
 </li>
+<li>案例 4：<code>n = 65535</code>
+<ul>
+<li>2-1) Input values：<code>n = 65535</code></li>
+<li>2-2) expected result：<code>6542</code></li>
+<li>2-3) test program's result：<code>6542</code></li>
+<li>2-4) criteria analysis：變異測試延伸案例，驗證長迴圈與條件變異是否被殺死，同時檢查大範圍質數計數的正確性（涵蓋行：1-18）</li>
+</ul>
+</li>
+<li>案例 5：<code>n = 0</code>
+<ul>
+<li>2-1) Input values：<code>n = 0</code></li>
+<li>2-2) expected result：<code>0</code></li>
+<li>2-3) test program's result：<code>0</code></li>
+<li>2-4) criteria analysis：變異測試延伸案例，再次確認 <code>n &lt; 2</code> 分支對 0 的處理，確保對應變異（將條件修改為 <code>&lt; 1</code> 等）會被測試殺死，避免邏輯倒退（涵蓋行：1-3）</li>
+</ul>
+</li>
 </ul>
 <h2 id="測試工具展示">測試工具展示</h2>
 <ul>
 <li>測試框架：JUnit 5（Maven Surefire 自動偵測 JUnitPlatformProvider）。</li>
-<li>相關測試方法：<code>NumberProcessorLineCoverageTest#testCountPrimes_LineCoverage100</code> 內含上述三個案例的斷言，逐一比對預期與實際結果。</li>
-<li>工具比對報告：<code>report/surefire/com.ntou.testing.NumberProcessorLineCoverageTest.txt</code> 顯示 <code>Tests run: 5, Failures: 0</code>，證明所有斷言通過。</li>
+<li>相關測試方法：
+<ul>
+<li><code>NumberProcessorLineCoverageTest#testCountPrimes_LineCoverage100</code> 覆蓋案例 1~3。</li>
+<li><code>MutationTestingCoverageTest#testCountPrimes_MutationTestingCoverage</code> 覆蓋案例 4、案例 5，透過變異測試框架驗證對大型輸入與邊界值的穩定度。</li>
+</ul>
+</li>
+<li>工具比對報告：
+<ul>
+<li><code>report/surefire/com.ntou.testing.NumberProcessorLineCoverageTest.txt</code> 顯示 <code>Tests run: 5, Failures: 0</code>，證明最小集合所有斷言通過。</li>
+<li><code>report/surefire/com.ntou.testing.MutationTestingCoverageTest.txt</code> 顯示 <code>Tests run: 4, Failures: 0</code>，證明變異延伸案例與斷言通過。</li>
+</ul>
+</li>
 <li>指令：<code>mvn test</code></li>
-<li>範例執行：<pre><code class="language-bash"><span class="hljs-comment"># Terminal</span>
+<li>範例執行：</li>
+</ul>
+<pre><code class="language-bash"><span class="hljs-comment"># Terminal</span>
 $ mvn <span class="hljs-built_in">test</span>
 [INFO] Running com.ntou.testing.NumberProcessorLineCoverageTest
 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 [INFO] BUILD SUCCESS
 </code></pre>
-</li>
-</ul>
 <pre><code class="language-bash"><span class="hljs-comment"># Terminal</span>
 $ mvn <span class="hljs-built_in">test</span>
 [INFO] Scanning <span class="hljs-keyword">for</span> projects...
@@ -907,6 +933,85 @@ $ mvn <span class="hljs-built_in">test</span>
 <li><code>countPrimes</code> 指令、分支、行覆蓋率皆為 100%（指令全綠、分支全綠、行全綠）。</li>
 <li>未覆蓋行：無；JaCoCo 標示所有行為綠色。</li>
 </ul>
+<h2 id="5-countprimes-方法執行流程圖">5. countPrimes 方法執行流程圖</h2>
+<pre><code class="language-mermaid">flowchart TD
+    Start([開始]) --&gt;|1| Input[&quot;接收參數 n&quot;]
+    Input --&gt;|2| CheckN{&quot;n &lt; 2?&quot;}
+    CheckN --&gt;|是| Return0[&quot;return 0&quot;]
+    CheckN --&gt;|否| Init[&quot;count = 0&lt;br/&gt;num = 2&quot;]
+    Init --&gt;|5| OuterLoop{&quot;num &lt;= n?&quot;}
+    OuterLoop --&gt;|否| ReturnCount[&quot;return count&quot;]
+    OuterLoop --&gt;|是| CheckPrime[&quot;isPrime = true&lt;br/&gt;i = 2&quot;]
+    CheckPrime --&gt;|8| InnerLoop{&quot;i * i &lt;= num?&quot;}
+    InnerLoop --&gt;|是| CheckDiv{&quot;num % i == 0?&quot;}
+    CheckDiv --&gt;|是| SetFalse[&quot;isPrime = false&lt;br/&gt;break&quot;]
+    CheckDiv --&gt;|否| IncI[&quot;i++&quot;]
+    IncI --&gt;|迴圈| InnerLoop
+    SetFalse --&gt;|13| CheckPrimeResult{&quot;isPrime?&quot;}
+    InnerLoop --&gt;|否| CheckPrimeResult
+    CheckPrimeResult --&gt;|是| IncCount[&quot;count++&quot;]
+    CheckPrimeResult --&gt;|否| IncNum[&quot;num++&quot;]
+    IncCount --&gt;|17| IncNum
+    IncNum --&gt;|18| OuterLoop
+    Return0 --&gt;|19| End([結束])
+    ReturnCount --&gt;|20| End
+</code></pre>
+<h3 id="路徑說明">路徑說明</h3>
+<ul>
+<li><strong>1-2</strong>: 開始 → 輸入參數</li>
+<li><strong>3</strong>: n &lt; 2 路徑 (無質數)</li>
+<li><strong>4</strong>: n &gt;= 2 路徑 (進入質數計算)</li>
+<li><strong>5</strong>: 初始化後進入外迴圈檢查</li>
+<li><strong>6</strong>: 外迴圈結束路徑 (num &gt; n)</li>
+<li><strong>7</strong>: 外迴圈執行路徑 (num &lt;= n)</li>
+<li><strong>8</strong>: 初始化質數檢查後進入內迴圈</li>
+<li><strong>9</strong>: 內迴圈執行路徑 (i * i &lt;= num)</li>
+<li><strong>10</strong>: 發現因數路徑 (num % i == 0) - 不是質數</li>
+<li><strong>11</strong>: 未發現因數路徑 (num % i != 0) - 繼續檢查</li>
+<li><strong>12</strong>: 內迴圈回(繼續檢查下一個除數)</li>
+<li><strong>13</strong>: 中斷內迴圈後檢查質數結果</li>
+<li><strong>14</strong>: 內迴圈正常結束路徑 (i * i &gt; num)</li>
+<li><strong>15</strong>: 是質數路徑 (count++)</li>
+<li><strong>16</strong>: 不是質數路徑 (直接進入下一個數)</li>
+<li><strong>17</strong>: 計數後準備檢查下一個數</li>
+<li><strong>18</strong>: 外迴圈回(檢查下一個數是否為質數)</li>
+<li><strong>19-20</strong>: 各返回路徑到結束</li>
+</ul>
+<h3 id="覆蓋率數據">覆蓋率數據</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">覆蓋類型</th>
+<th style="text-align:left">總數</th>
+<th style="text-align:left">最少路徑數</th>
+<th style="text-align:left">覆蓋率</th>
+<th style="text-align:left">覆蓋路徑範例 (Path)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Edge Coverage</strong></td>
+<td style="text-align:left">20</td>
+<td style="text-align:left">5</td>
+<td style="text-align:left">100%</td>
+<td style="text-align:left">1→2→3→19, <br>1→2→4→5→6→20 (n=1), <br>1→2→4→5→7→8→14→16→18→5→6→20 (n=2, 質數), <br>1→2→4→5→7→8→9→10→13→16→18→5→6→20 (n=4, 合數), <br>1→2→4→5→7→8→9→11→12→8→14→16→18→5→6→20 (n=9, 合數，多個除數)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Edge-Pair Coverage</strong></td>
+<td style="text-align:left">20</td>
+<td style="text-align:left">5</td>
+<td style="text-align:left">100%</td>
+<td style="text-align:left">同上</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Path Coverage</strong></td>
+<td style="text-align:left">無限*</td>
+<td style="text-align:left">N/A</td>
+<td style="text-align:left">N/A</td>
+<td style="text-align:left">*因有嵌套迴圈，總路徑數為無限。此處列出覆蓋所有邊/邊對所需的代表性路徑。</td>
+</tr>
+</tbody>
+</table>
 
             <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
             
