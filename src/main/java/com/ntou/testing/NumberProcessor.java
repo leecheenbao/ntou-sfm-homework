@@ -96,6 +96,10 @@ public class NumberProcessor {
             return 0; // Line 3
         }
         
+        if (n < 0 || n > 65535) {
+            throw new IllegalArgumentException("數值應該介於 0 到 65535 之間");
+        }
+
         int count = 0; // Line 4
         for (int i = 2; i <= n; i++) { // Line 5
             boolean isPrime = true; // Line 6
