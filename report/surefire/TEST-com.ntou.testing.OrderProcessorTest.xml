@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.ntou.testing.OrderProcessorTest" time="0.076" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.ntou.testing.OrderProcessorTest" time="0.11" tests="59" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,9 +12,10 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="TW"/>
     <property name="sun.boot.library.path" value="/Users/liqingbao/.sdkman/candidates/java/17.0.16-tem/lib"/>
-    <property name="sun.java.command" value="/Users/liqingbao/workspace_paul/homework/target/surefire/surefirebooter-20251122145150682_3.jar /Users/liqingbao/workspace_paul/homework/target/surefire 2025-11-22T14-51-50_646-jvmRun1 surefire-20251122145150682_1tmp surefire_0-20251122145150682_2tmp"/>
+    <property name="sun.java.command" value="/Users/liqingbao/workspace_paul/homework/target/surefire/surefirebooter-20251122161042549_3.jar /Users/liqingbao/workspace_paul/homework/target/surefire 2025-11-22T16-10-42_519-jvmRun1 surefire-20251122161042549_1tmp surefire_0-20251122161042549_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
+    <property name="test" value="OrderProcessorTest"/>
     <property name="surefire.test.class.path" value="/Users/liqingbao/workspace_paul/homework/target/test-classes:/Users/liqingbao/workspace_paul/homework/target/classes:/Users/liqingbao/.m2/repository/org/junit/jupiter/junit-jupiter/5.9.2/junit-jupiter-5.9.2.jar:/Users/liqingbao/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.2/junit-jupiter-api-5.9.2.jar:/Users/liqingbao/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/liqingbao/.m2/repository/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.jar:/Users/liqingbao/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/liqingbao/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.2/junit-jupiter-params-5.9.2.jar:/Users/liqingbao/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.2/junit-jupiter-engine-5.9.2.jar:/Users/liqingbao/.m2/repository/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.jar:/Users/liqingbao/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/liqingbao/.m2/repository/net/bytebuddy/byte-buddy/1.12.21/byte-buddy-1.12.21.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/Users/liqingbao"/>
@@ -28,7 +29,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/Users/liqingbao/workspace_paul/homework/target/surefire/surefirebooter-20251122145150682_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/liqingbao/workspace_paul/homework/target/surefire/surefirebooter-20251122161042549_3.jar"/>
     <property name="user.script" value="Hant"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
@@ -57,14 +58,63 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testProcessOrder_BoundaryValues_Minimum" classname="com.ntou.testing.OrderProcessorTest" time="0.058"/>
-  <testcase name="testProcessOrder_CompleteOrder_Burger_HashBrown_Coffee" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
-  <testcase name="testProcessOrder_InvalidInput_NonNumericThenValid" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
-  <testcase name="testProcessOrder_PriceCalculation_Cheapest" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
-  <testcase name="testProcessOrder_CompleteOrder_EggPancake_RadishCake_OrangeJuice" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
-  <testcase name="testProcessOrder_PriceCalculation_MostExpensive" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
-  <testcase name="testProcessOrder_MenuDisplay_AllOptions" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
-  <testcase name="testProcessOrder_CompleteOrder_Toast_ChickenNuggets_SoyMilk" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
-  <testcase name="testProcessOrder_CompleteOrder_Burger_Fries_BlackTea" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
-  <testcase name="testProcessOrder_BoundaryValues_Maximum" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC28_EggPancake_ChickenNuggets_Coffee" classname="com.ntou.testing.OrderProcessorTest" time="0.058"/>
+  <testcase name="testCombinatorial_TC36_Toast_Fries_Coffee" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC12_Burger_ChickenNuggets_Coffee" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC48_Toast_HashBrown_Coffee" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCategorization_Drink_3_SoyMilk" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC08_Burger_RadishCake_Coffee" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC02_Burger_Fries_OrangeJuice" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCategorization_SideDish_3_ChickenNuggets" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC40_Toast_RadishCake_Coffee" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC06_Burger_RadishCake_OrangeJuice" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCategorization_SideDish_2_RadishCake" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC24_EggPancake_RadishCake_Coffee" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC18_EggPancake_Fries_OrangeJuice" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC39_Toast_RadishCake_SoyMilk" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC10_Burger_ChickenNuggets_OrangeJuice" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC20_EggPancake_Fries_Coffee" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC07_Burger_RadishCake_SoyMilk" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC34_Toast_Fries_OrangeJuice" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC03_Burger_Fries_SoyMilk" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC33_Toast_Fries_BlackTea" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC47_Toast_HashBrown_SoyMilk" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCategorization_SideDish_1_Fries" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC23_EggPancake_RadishCake_SoyMilk" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC14_Burger_HashBrown_OrangeJuice" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC13_Burger_HashBrown_BlackTea" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC16_Burger_HashBrown_Coffee" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC35_Toast_Fries_SoyMilk" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC46_Toast_HashBrown_OrangeJuice" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC04_Burger_Fries_Coffee" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCategorization_MainDish_3_Toast" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC45_Toast_HashBrown_BlackTea" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC11_Burger_ChickenNuggets_SoyMilk" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC26_EggPancake_ChickenNuggets_OrangeJuice" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC21_EggPancake_RadishCake_BlackTea" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCategorization_Drink_2_OrangeJuice" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCategorization_MainDish_1_Burger" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCategorization_MainDish_2_EggPancake" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC32_EggPancake_HashBrown_Coffee" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC42_Toast_ChickenNuggets_OrangeJuice" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCategorization_SideDish_4_HashBrown" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC38_Toast_RadishCake_OrangeJuice" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC17_EggPancake_Fries_BlackTea" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCategorization_Drink_1_BlackTea" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC22_EggPancake_RadishCake_OrangeJuice" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC05_Burger_RadishCake_BlackTea" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC44_Toast_ChickenNuggets_Coffee" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC01_Burger_Fries_BlackTea" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC31_EggPancake_HashBrown_SoyMilk" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC41_Toast_ChickenNuggets_BlackTea" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC09_Burger_ChickenNuggets_BlackTea" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC15_Burger_HashBrown_SoyMilk" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC30_EggPancake_HashBrown_OrangeJuice" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCategorization_Drink_4_Coffee" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC19_EggPancake_Fries_SoyMilk" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC27_EggPancake_ChickenNuggets_SoyMilk" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC25_EggPancake_ChickenNuggets_BlackTea" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC29_EggPancake_HashBrown_BlackTea" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
+  <testcase name="testCombinatorial_TC43_Toast_ChickenNuggets_SoyMilk" classname="com.ntou.testing.OrderProcessorTest" time="0"/>
+  <testcase name="testCombinatorial_TC37_Toast_RadishCake_BlackTea" classname="com.ntou.testing.OrderProcessorTest" time="0.001"/>
 </testsuite>
