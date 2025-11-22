@@ -33,27 +33,19 @@
 
 ## 測試案例詳解（最小集合達成 100% 覆蓋）
 ### 測試案例（最小集合達成 100% 覆蓋＋變異測試延伸）
+
+有效範圍為 1 - 65535
 - 案例 1：`n = 1`
   - 2-1) Input values：`n = 1`
   - 2-2) expected result：`0`
   - 2-3) test program's result：`0`
   - 2-4) criteria analysis：覆蓋 `if (n < 2)` true 分支，直接回傳（涵蓋行：1-3）
-- 案例 2：`n = 2`
-  - 2-1) Input values：`n = 2`
-  - 2-2) expected result：`1`
-  - 2-3) test program's result：`1`
-  - 2-4) criteria analysis：覆蓋 `if` false 分支、外層 `for` 單次迭代、內層 `for` 條件為 false，驗證質數累計與 `if (isPrime)` true（涵蓋行：1-7、13-18）
-- 案例 3：`n = 10`
-  - 2-1) Input values：`n = 10`
-  - 2-2) expected result：`4`（質數為 2、3、5、7）
-  - 2-3) test program's result：`4`
-  - 2-4) criteria analysis：覆蓋內層 `if (i % j == 0)` true/false 分支、`break` 路徑、`if (isPrime)` true/false，涵蓋所有迴圈路徑（涵蓋行：1-18）
-- 案例 4：`n = 65535`
+- 案例 2：`n = 65535`
   - 2-1) Input values：`n = 65535`
   - 2-2) expected result：`6542`
   - 2-3) test program's result：`6542`
   - 2-4) criteria analysis：變異測試延伸案例，驗證長迴圈與條件變異是否被殺死，同時檢查大範圍質數計數的正確性（涵蓋行：1-18）
-- 案例 5：`n = 0`
+- 案例 3：`n = 0`
   - 2-1) Input values：`n = 0`
   - 2-2) expected result：`0`
   - 2-3) test program's result：`0`

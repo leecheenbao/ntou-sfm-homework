@@ -97,28 +97,32 @@ public class NumberProcessor {
      * @return 小於等於 n 的質數個數
      */
     public int countPrimes(int n) {
-        if (n < 2) {
-            return 0;
-        }
+        try {
+            if (n < 2) {
+                return 0;
+            }
 
-        if (n < 0 || n > 65535) {
-            throw new IllegalArgumentException("數值應該介於 0 到 65535 之間");
-        }
+            if (n < 0 || n > 65535) {
+                throw new IllegalArgumentException("數值應該介於 0 到 65535 之間");
+            }
 
-        int count = 0;
-        for (int i = 2; i <= n; i++) {
-            boolean isPrime = true;
-            for (int j = 2; j * j <= i; j++) {
-                if (i % j == 0) {
-                    isPrime = false;
-                    break;
+            int count = 0;
+            for (int i = 2; i <= n; i++) {
+                boolean isPrime = true;
+                for (int j = 2; j * j <= i; j++) {
+                    if (i % j == 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime) {
+                    count++;
                 }
             }
-            if (isPrime) {
-                count++;
-            }
-        }
 
-        return count;
+            return count;
+        } catch (IllegalArgumentException e) {
+            throw e;
+        }
     }
 }

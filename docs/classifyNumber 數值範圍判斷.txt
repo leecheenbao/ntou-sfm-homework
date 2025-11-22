@@ -1,0 +1,192 @@
+classifyNumber 數值範圍判斷
+
+	public String classifyNumber(int number) { // Line 1
+		if (number < 0) { // Line 2
+			return "NEGATIVE"; // Line 3
+		} else if (number == 0) { // Line 4
+			return "ZERO"; // Line 5
+		} else if (number <= 10) { // Line 6
+			return "SMALL"; // Line 7
+		} else if (number <= 100) { // Line 8
+			return "MEDIUM"; // Line 9
+		} else { // Line 10
+			return "LARGE"; // Line 11
+		}
+	}
+
+*行數不足12行
+*不存在迴圈
+
+----------------------------------------------------------------------
+
+sumArray 陣列元素總和
+
+	public int sumArray(int[] numbers) { // Line 1
+		if (numbers == null || numbers.length == 0) { // Line 2
+			return 0; // Line 3
+		}
+			
+		int sum = 0; // Line 4
+		int i = 0; // Line 5
+			
+		while (i < numbers.length) { // Line 6
+			sum += numbers[i]; // Line 7
+			i++; // Line 8
+		} // Line 9
+			
+		return sum; // Line 10
+	}
+
+*行數不足12行
+
+----------------------------------------------------------------------	
+
+findMax	尋找陣列中的最大值
+
+	public int findMax(int[] numbers) { // Line 1
+		if (numbers == null || numbers.length == 0) { // Line 2
+			return Integer.MIN_VALUE; // Line 3
+		}
+			
+		int max = numbers[0]; // Line 4
+		for (int i = 1; i < numbers.length; i++) { // Line 5
+			if (numbers[i] > max) { // Line 6
+				max = numbers[i]; // Line 7
+			} // Line 8
+		} // Line 9
+			
+		return max; // Line 10
+	}
+
+*行數不足12行
+
+----------------------------------------------------------------------	
+
+complexBooleanLogic 複雜的邏輯判斷函數 - 包含多個子條件
+
+	public boolean complexBooleanLogic(boolean a, boolean b, boolean c, boolean d) { // Line 1
+        if ((a && b) || (c && d)) { // Line 2
+            return true; // Line 3 - 簡化邏輯，因為 (a&&b)||(c&&d) 為 true 時，a||b||c||d 必定為 true
+        } else { // Line 4
+            if (a || b) { // Line 5
+                return c || d; // Line 6
+            } else { // Line 7
+                return false; // Line 8
+            }
+        }
+    }
+	
+*行數不足12行
+*不存在迴圈
+
+----------------------------------------------------------------------	
+
+countPrimes計算質數個數
+
+	public int countPrimes(int n) { // Line 1
+        if (n < 2) { // Line 2
+            return 0; // Line 3
+        }
+        
+        int count = 0; // Line 4
+        for (int i = 2; i <= n; i++) { // Line 5
+            boolean isPrime = true; // Line 6
+            for (int j = 2; j * j <= i; j++) { // Line 7
+                if (i % j == 0) { // Line 8
+                    isPrime = false; // Line 9
+                    break; // Line 10
+                } // Line 11
+            } // Line 12
+            if (isPrime) { // Line 13
+                count++; // Line 14
+            } // Line 15
+        } // Line 16
+        
+        return count; // Line 17
+    }
+	
+1) 詳細說明被測試的function:
+	被測試的程式碼(function)必須至少有12行的指令：行數滿足
+	被測試的程式碼(function)必須要有 i)if ii)迴圈：if條件式滿足、迴圈滿足
+	
+2) 每個測試案例依照下列規定格式撰寫:
+	2-1) Input values(測試時候需要控制資料的值):12、13
+	2-2) expected result(正確的結果):5、6
+	2-3) test program's result(程式執行後的結果):5、6
+	2-4) criteria analysis(測試目標的分析):已非質數以及質數各1帶入運算測試，均符合正確結果。
+
+3) 詳細說明作業的測試案例:
+	使用最少個測試案例達到測試目標涵蓋率100% (testing criteria coverage 100%)
+ 
+4) 使用測試工具在每個作業的展示
+	4-1)使用測試工具測試每個測試案例：
+	4-2)使用測試工具的指令來比對每個測試案例的正確與否
+		(比對正確的結果與程式執行後的結果):
+		顯示工具比對結果的報告
+
+5) 只有作業一需要顯示測試工具的Line Coverage:
+	5-1)測試工具顯示Line Coverage百分比
+	5-2)測試工具顯示哪幾行程式碼沒有測試過
+
+flowchart TD
+    Start([開始]) -->|1| Input["接收參數 n"]
+    Input -->|2| CheckN{"n < 2?"}
+    CheckN -->|3: 是| Return0["return 0"]
+    CheckN -->|4: 否| Init["count = 0<br/>num = 2"]
+    Init -->|5| OuterLoop{"num <= n?"}
+    OuterLoop -->|6: 否| ReturnCount["return count"]
+    OuterLoop -->|7: 是| CheckPrime["isPrime = true<br/>i = 2"]
+    CheckPrime -->|8| InnerLoop{"i * i <= num?"}
+    InnerLoop -->|9: 是| CheckDiv{"num % i == 0?"}
+    CheckDiv -->|10: 是| SetFalse["isPrime = false<br/>break"]
+    CheckDiv -->|11: 否| IncI["i++"]
+    IncI -->|12: 內迴圈| InnerLoop
+    SetFalse -->|13| CheckPrimeResult{"isPrime?"}
+    InnerLoop -->|14: 否| CheckPrimeResult
+    CheckPrimeResult -->|15: 是| IncCount["count++"]
+    CheckPrimeResult -->|16: 否| IncNum["num++"]
+    IncCount -->|17| IncNum
+    IncNum -->|18: 外迴圈| OuterLoop
+    Return0 -->|19| End([結束])
+    ReturnCount -->|20| End
+
+程式可能運作路徑：
+1>2>3>19
+1>2>4>5>6>20(無須)
+1>2>4>5>7>8>9>10>13>15>17>18>6>20
+1>2>4>5>7>8>9>10>13>16>18>6>20
+1>2>4>5>7>8>9>10>13>15>16>18>7>8>9>11>12>14>16>18>6>20
+
+4-1) Predicate Coverage
+		(整個條件判斷式(整句)的 True False 都要測試過)
+		Line 2：if (n < 2)：T = 輸入數值n不足2，超出程式正常值範圍，回傳0並終止程式。輸入1可測試。
+							F = 輸入數值n大於2，初步符合程式正常值範圍，繼續程式。輸入2~65535可測試。
+							
+		Line 5: 迴圈條件 i <= n：T = 目前測試的數值i尚未超出輸入值n，迴圈繼續執行。
+								 F = 目前測試的數值i超出輸入值n，迴圈不執行，跳出迴圈繼續程式。
+								 
+		Line 7: 迴圈條件 j * j <= i：T = 目前測試的數值i尚有其他可能的因數，迴圈繼續程式。
+									 F = 目前測試的數值i<=3或者已無更多的因數，迴圈不執行，跳出迴圈繼續程式。
+									 
+		Line 8: 判斷式 i % j == 0：T = 目前測試的數值i可以被當前的數值j整除，i非質數，進入True條件結果。
+								   F = 目前測試的數值i無法被當前的數值j整除，進入False條件結果。
+								   
+		Line 13:判斷式 isPrime (即 isPrime == true)：T = 輸入值n為質數，進入True條件結果。
+													 F = 輸入值n非質數，，進入False條件結果。
+
+11/14(碩士) 11/15(碩專) 
+4-2) Clause Coverage
+		(每個子條件的 True False 都要測試過)
+		第一種狀況：T 0 0 0 0。
+		第二種狀況：F T/F T/F T F。
+		第三種狀況：F T F F T。
+		第四種狀況：F T T F T。
+
+
+11/14(碩士) 11/15(碩專) 
+4-3) Combinatorial Coverage(各種可能的排列組合)
+		(每個子條件 True False 的全部排列組合 都要測試過)
+		第一種狀況：T 0 0 0 0。Line 2 隨即結束程式，後續判斷不執行。
+		第二種狀況：F T T T F。輸入值n為>3且非2倍數的非質數。
+		第三種狀況：F T/F T/F F T。輸入值n為<=3的質數。
+		第四種狀況：F T/F T/F F T。輸入值n為>3的質數。
