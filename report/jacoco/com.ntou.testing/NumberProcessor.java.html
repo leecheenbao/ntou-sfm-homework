@@ -7,90 +7,6 @@
 <span class="fc" id="L7">public class NumberProcessor {</span>
 
     /**
-     * 判斷數字範圍並分類
-     * 
-     * @param number 要分類的數字
-     * @return 分類結果字串
-     */
-    public String classifyNumber(int number) { // Line 1
-<span class="nc bnc" id="L16" title="All 2 branches missed.">        if (number &lt; 0) { // Line 2</span>
-<span class="nc" id="L17">            return &quot;NEGATIVE&quot;; // Line 3</span>
-<span class="nc bnc" id="L18" title="All 2 branches missed.">        } else if (number == 0) { // Line 4</span>
-<span class="nc" id="L19">            return &quot;ZERO&quot;; // Line 5</span>
-<span class="nc bnc" id="L20" title="All 2 branches missed.">        } else if (number &lt;= 10) { // Line 6</span>
-<span class="nc" id="L21">            return &quot;SMALL&quot;; // Line 7</span>
-<span class="nc bnc" id="L22" title="All 2 branches missed.">        } else if (number &lt;= 100) { // Line 8</span>
-<span class="nc" id="L23">            return &quot;MEDIUM&quot;; // Line 9</span>
-        } else { // Line 10
-<span class="nc" id="L25">            return &quot;LARGE&quot;; // Line 11</span>
-        }
-    }
-
-    /**
-     * 計算陣列中元素的總和
-     * 
-     * @param numbers 整數陣列
-     * @return 總和，如果陣列為空則返回 0
-     */
-    public int sumArray(int[] numbers) { // Line 1
-<span class="nc bnc" id="L36" title="All 4 branches missed.">        if (numbers == null || numbers.length == 0) { // Line 2</span>
-<span class="nc" id="L37">            return 0; // Line 3</span>
-        }
-
-<span class="nc" id="L40">        int sum = 0; // Line 4</span>
-<span class="nc" id="L41">        int i = 0; // Line 5</span>
-
-<span class="nc bnc" id="L43" title="All 2 branches missed.">        while (i &lt; numbers.length) { // Line 6</span>
-<span class="nc" id="L44">            sum += numbers[i]; // Line 7</span>
-<span class="nc" id="L45">            i++; // Line 8</span>
-        } // Line 9
-
-<span class="nc" id="L48">        return sum; // Line 10</span>
-    }
-
-    /**
-     * 尋找陣列中的最大值
-     * 
-     * @param numbers 整數陣列
-     * @return 最大值，如果陣列為空則返回 Integer.MIN_VALUE
-     */
-    public int findMax(int[] numbers) { // Line 1
-<span class="nc bnc" id="L58" title="All 4 branches missed.">        if (numbers == null || numbers.length == 0) { // Line 2</span>
-<span class="nc" id="L59">            return Integer.MIN_VALUE; // Line 3</span>
-        }
-
-<span class="nc" id="L62">        int max = numbers[0]; // Line 4</span>
-<span class="nc bnc" id="L63" title="All 2 branches missed.">        for (int i = 1; i &lt; numbers.length; i++) { // Line 5</span>
-<span class="nc bnc" id="L64" title="All 2 branches missed.">            if (numbers[i] &gt; max) { // Line 6</span>
-<span class="nc" id="L65">                max = numbers[i]; // Line 7</span>
-            } // Line 8
-        } // Line 9
-
-<span class="nc" id="L69">        return max; // Line 10</span>
-    }
-
-    /**
-     * 複雜的邏輯判斷函數 - 包含多個子條件
-     * 
-     * @param a 第一個布林值
-     * @param b 第二個布林值
-     * @param c 第三個布林值
-     * @param d 第四個布林值
-     * @return 邏輯運算結果
-     */
-    public boolean complexBooleanLogic(boolean a, boolean b, boolean c, boolean d) { // Line 1
-<span class="nc bnc" id="L82" title="All 8 branches missed.">        if ((a &amp;&amp; b) || (c &amp;&amp; d)) { // Line 2</span>
-<span class="nc" id="L83">            return true; // Line 3 - 簡化邏輯，因為 (a&amp;&amp;b)||(c&amp;&amp;d) 為 true 時，a||b||c||d 必定為 true</span>
-        } else { // Line 4
-<span class="nc bnc" id="L85" title="All 4 branches missed.">            if (a || b) { // Line 5</span>
-<span class="nc bnc" id="L86" title="All 4 branches missed.">                return c || d; // Line 6</span>
-            } else { // Line 7
-<span class="nc" id="L88">                return false; // Line 8</span>
-            }
-        }
-    }
-
-    /**
      * 計算質數個數
      * 
      * @param n 上限
@@ -98,31 +14,31 @@
      */
     public int countPrimes(int n) {
         try {
-<span class="fc bfc" id="L101" title="All 2 branches covered.">            if (n &lt; 2) {</span>
-<span class="fc" id="L102">                return 0;</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">            if (n &lt; 2) {</span>
+<span class="fc" id="L18">                return 0;</span>
             }
 
-<span class="pc bpc" id="L105" title="1 of 4 branches missed.">            if (n &lt; 0 || n &gt; 65535) {</span>
-<span class="fc" id="L106">                throw new IllegalArgumentException(&quot;數值應該介於 0 到 65535 之間&quot;);</span>
+<span class="pc bpc" id="L21" title="1 of 4 branches missed.">            if (n &lt; 0 || n &gt; 65535) {</span>
+<span class="fc" id="L22">                throw new IllegalArgumentException(&quot;數值應該介於 0 到 65535 之間&quot;);</span>
             }
 
-<span class="fc" id="L109">            int count = 0;</span>
-<span class="fc bfc" id="L110" title="All 2 branches covered.">            for (int i = 2; i &lt;= n; i++) {</span>
-<span class="fc" id="L111">                boolean isPrime = true;</span>
-<span class="fc bfc" id="L112" title="All 2 branches covered.">                for (int j = 2; j * j &lt;= i; j++) {</span>
-<span class="fc bfc" id="L113" title="All 2 branches covered.">                    if (i % j == 0) {</span>
-<span class="fc" id="L114">                        isPrime = false;</span>
-<span class="fc" id="L115">                        break;</span>
+<span class="fc" id="L25">            int count = 0;</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">            for (int i = 2; i &lt;= n; i++) {</span>
+<span class="fc" id="L27">                boolean isPrime = true;</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">                for (int j = 2; j * j &lt;= i; j++) {</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">                    if (i % j == 0) {</span>
+<span class="fc" id="L30">                        isPrime = false;</span>
+<span class="fc" id="L31">                        break;</span>
                     }
                 }
-<span class="fc bfc" id="L118" title="All 2 branches covered.">                if (isPrime) {</span>
-<span class="fc" id="L119">                    count++;</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">                if (isPrime) {</span>
+<span class="fc" id="L35">                    count++;</span>
                 }
             }
 
-<span class="fc" id="L123">            return count;</span>
-<span class="fc" id="L124">        } catch (IllegalArgumentException e) {</span>
-<span class="fc" id="L125">            throw e;</span>
+<span class="fc" id="L39">            return count;</span>
+<span class="fc" id="L40">        } catch (IllegalArgumentException e) {</span>
+<span class="fc" id="L41">            throw e;</span>
         }
     }
 }
