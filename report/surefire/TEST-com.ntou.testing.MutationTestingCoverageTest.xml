@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.ntou.testing.MutationTestingCoverageTest" time="0.061" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.ntou.testing.MutationTestingCoverageTest" time="0.005" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="TW"/>
     <property name="sun.boot.library.path" value="/Users/liqingbao/.sdkman/candidates/java/17.0.16-tem/lib"/>
-    <property name="sun.java.command" value="/Users/liqingbao/workspace_paul/homework/target/surefire/surefirebooter-20251115162423201_3.jar /Users/liqingbao/workspace_paul/homework/target/surefire 2025-11-15T16-24-23_173-jvmRun1 surefire-20251115162423201_1tmp surefire_0-20251115162423201_2tmp"/>
+    <property name="sun.java.command" value="/Users/liqingbao/workspace_paul/homework/target/surefire/surefirebooter-20251129150919468_3.jar /Users/liqingbao/workspace_paul/homework/target/surefire 2025-11-29T15-09-19_436-jvmRun1 surefire-20251129150919468_1tmp surefire_0-20251129150919468_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/liqingbao/workspace_paul/homework/target/test-classes:/Users/liqingbao/workspace_paul/homework/target/classes:/Users/liqingbao/.m2/repository/org/junit/jupiter/junit-jupiter/5.9.2/junit-jupiter-5.9.2.jar:/Users/liqingbao/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.2/junit-jupiter-api-5.9.2.jar:/Users/liqingbao/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/liqingbao/.m2/repository/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.jar:/Users/liqingbao/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/liqingbao/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.2/junit-jupiter-params-5.9.2.jar:/Users/liqingbao/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.2/junit-jupiter-engine-5.9.2.jar:/Users/liqingbao/.m2/repository/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.jar:/Users/liqingbao/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/liqingbao/.m2/repository/net/bytebuddy/byte-buddy/1.12.21/byte-buddy-1.12.21.jar:"/>
@@ -28,7 +28,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/Users/liqingbao/workspace_paul/homework/target/surefire/surefirebooter-20251115162423201_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/liqingbao/workspace_paul/homework/target/surefire/surefirebooter-20251129150919468_3.jar"/>
     <property name="user.script" value="Hant"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
@@ -57,5 +57,101 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testCountPrimes_MutationTestingCoverage" classname="com.ntou.testing.MutationTestingCoverageTest" time="0.053"/>
+  <testcase name="testFindMax_SingleElement" classname="com.ntou.testing.MutationTestingCoverageTest" time="0">
+    <system-out><![CDATA[
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+【 Test Case 3: 單元素陣列測試 】
+　2-1) Input values (測試時候需要控制資料的值) : [3]
+　2-2) Expected result (正確的結果) : 3
+　2-3) Test program's result (程式執行後的結果) : 3
+　2-4) Criteria analysis (測試目標的分析):
+   覆蓋 if (numbers == null || numbers.length == 0) 的 false 分支
+   覆蓋迴圈不執行的情況（單元素陣列）
+]]></system-out>
+  </testcase>
+  <testcase name="testFindMax_Null" classname="com.ntou.testing.MutationTestingCoverageTest" time="0">
+    <system-out><![CDATA[
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+【 Test Case 2: Null 測試 】
+　2-1) Input values (測試時候需要控制資料的值) : null
+　2-2) Expected result (正確的結果) : -2147483648
+　2-3) Test program's result (程式執行後的結果) : -2147483648
+　2-4) Criteria analysis (測試目標的分析):
+   覆蓋 if (numbers == null || numbers.length == 0) 的 true 分支（null 情況）
+]]></system-out>
+  </testcase>
+  <testcase name="testFindMax_Basic" classname="com.ntou.testing.MutationTestingCoverageTest" time="0">
+    <system-out><![CDATA[
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+【 Test Case 1: 基本測試 】
+　2-1) Input values (測試時候需要控制資料的值) : [3, 9, 4]
+　2-2) Expected result (正確的結果) : 9
+　2-3) Test program's result (程式執行後的結果) : 9
+　2-4) Criteria analysis (測試目標的分析):
+   覆蓋 if (numbers == null || numbers.length == 0) 的 false 分支
+   覆蓋迴圈完整執行（i = 1、i = 2）
+   覆蓋比較條件 if (numbers[i] > max) 的 true 與 false 兩種結果
+   覆蓋正常回傳路徑，驗證最大值正確計算為 9
+]]></system-out>
+  </testcase>
+  <testcase name="testMutationTestingCoverage1" classname="com.ntou.testing.MutationTestingCoverageTest" time="0">
+    <system-out><![CDATA[
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+【 Mutation Test Case 1 】
+　1) Input values (測試時候需要控制資料的值) : [3, 9, 4]
+　2) Expected result (正確的結果) : 9
+　3) Test program's result (原本程式執行後的結果) : 9
+　*4) Criteria analysis (測試目標的分析)
+   *a) 突變的程式(修改的敘述): line7 將 > 改為 <
+   *b) 突變的程式執行後的結果(跟原本程式結果不一樣): 3
+]]></system-out>
+  </testcase>
+  <testcase name="testMutationTestingCoverage2" classname="com.ntou.testing.MutationTestingCoverageTest" time="0.001">
+    <system-out><![CDATA[
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+【 Mutation Test Case 2 】
+　1) Input values (測試時候需要控制資料的值) : [3, 9, 4]
+　2) Expected result (正確的結果) : 9
+　3) Test program's result (原本程式執行後的結果) : 9
+　*4) Criteria analysis (測試目標的分析)
+   *a) 突變的程式(修改的敘述): line2 將 == 改為 !=
+   *b) 突變的程式執行後的結果(跟原本程式結果不一樣): -2147483648
+]]></system-out>
+  </testcase>
+  <testcase name="testMutationTestingCoverage3" classname="com.ntou.testing.MutationTestingCoverageTest" time="0">
+    <system-out><![CDATA[
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+【 Mutation Test Case 3 】
+　1) Input values (測試時候需要控制資料的值) : [3, 9, 4]
+　2) Expected result (正確的結果) : 9
+　3) Test program's result (原本程式執行後的結果) : 9
+　*4) Criteria analysis (測試目標的分析)
+   *a) 突變的程式(修改的敘述): line6 將 1 改為 4
+   *b) 突變的程式執行後的結果(跟原本程式結果不一樣): 3
+]]></system-out>
+  </testcase>
+  <testcase name="testMutationTestingCoverage4" classname="com.ntou.testing.MutationTestingCoverageTest" time="0">
+    <system-out><![CDATA[
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+【 Mutation Test Case 4 】
+　1) Input values (測試時候需要控制資料的值) : [3, 9, 4]
+　2) Expected result (正確的結果) : 9
+　3) Test program's result (原本程式執行後的結果) : 9
+　*4) Criteria analysis (測試目標的分析)
+   *a) 突變的程式(修改的敘述): line8 將 i 改為 0
+   *b) 突變的程式執行後的結果(跟原本程式結果不一樣): 3
+]]></system-out>
+  </testcase>
+  <testcase name="testMutationTestingCoverage5" classname="com.ntou.testing.MutationTestingCoverageTest" time="0">
+    <system-out><![CDATA[
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+【 Mutation Test Case 5 】
+　1) Input values (測試時候需要控制資料的值) : [3, 9, 4]
+　2) Expected result (正確的結果) : 9
+　3) Test program's result (原本程式執行後的結果) : 9
+　*4) Criteria analysis (測試目標的分析)
+   *a) 突變的程式(修改的敘述): line11 將 max 改為 1
+   *b) 突變的程式執行後的結果(跟原本程式結果不一樣): 1
+]]></system-out>
+  </testcase>
 </testsuite>
