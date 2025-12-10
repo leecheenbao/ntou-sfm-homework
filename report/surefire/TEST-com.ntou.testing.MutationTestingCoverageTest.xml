@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="TW"/>
     <property name="sun.boot.library.path" value="/Users/liqingbao/.sdkman/candidates/java/17.0.16-tem/lib"/>
-    <property name="sun.java.command" value="/Users/liqingbao/workspace_paul/homework/target/surefire/surefirebooter-20251129150919468_3.jar /Users/liqingbao/workspace_paul/homework/target/surefire 2025-11-29T15-09-19_436-jvmRun1 surefire-20251129150919468_1tmp surefire_0-20251129150919468_2tmp"/>
+    <property name="sun.java.command" value="/Users/liqingbao/workspace_paul/homework/target/surefire/surefirebooter-20251210164623862_3.jar /Users/liqingbao/workspace_paul/homework/target/surefire 2025-12-10T16-46-23_829-jvmRun1 surefire-20251210164623862_1tmp surefire_0-20251210164623862_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/liqingbao/workspace_paul/homework/target/test-classes:/Users/liqingbao/workspace_paul/homework/target/classes:/Users/liqingbao/.m2/repository/org/junit/jupiter/junit-jupiter/5.9.2/junit-jupiter-5.9.2.jar:/Users/liqingbao/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.2/junit-jupiter-api-5.9.2.jar:/Users/liqingbao/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/liqingbao/.m2/repository/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.jar:/Users/liqingbao/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/liqingbao/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.2/junit-jupiter-params-5.9.2.jar:/Users/liqingbao/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.2/junit-jupiter-engine-5.9.2.jar:/Users/liqingbao/.m2/repository/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.jar:/Users/liqingbao/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/liqingbao/.m2/repository/net/bytebuddy/byte-buddy/1.12.21/byte-buddy-1.12.21.jar:"/>
@@ -28,7 +28,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/Users/liqingbao/workspace_paul/homework/target/surefire/surefirebooter-20251129150919468_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/liqingbao/workspace_paul/homework/target/surefire/surefirebooter-20251210164623862_3.jar"/>
     <property name="user.script" value="Hant"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
@@ -57,7 +57,7 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testFindMax_SingleElement" classname="com.ntou.testing.MutationTestingCoverageTest" time="0">
+  <testcase name="testFindMax_SingleElement" classname="com.ntou.testing.MutationTestingCoverageTest" time="0.001">
     <system-out><![CDATA[
 －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
 【 Test Case 3: 單元素陣列測試 】
@@ -69,7 +69,7 @@
    覆蓋迴圈不執行的情況（單元素陣列）
 ]]></system-out>
   </testcase>
-  <testcase name="testFindMax_Null" classname="com.ntou.testing.MutationTestingCoverageTest" time="0">
+  <testcase name="testFindMax_Null" classname="com.ntou.testing.MutationTestingCoverageTest" time="0.001">
     <system-out><![CDATA[
 －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
 【 Test Case 2: Null 測試 】
@@ -94,7 +94,7 @@
    覆蓋正常回傳路徑，驗證最大值正確計算為 9
 ]]></system-out>
   </testcase>
-  <testcase name="testMutationTestingCoverage1" classname="com.ntou.testing.MutationTestingCoverageTest" time="0">
+  <testcase name="testMutationTestingCoverage1" classname="com.ntou.testing.MutationTestingCoverageTest" time="0.001">
     <system-out><![CDATA[
 －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
 【 Mutation Test Case 1 】
@@ -106,7 +106,7 @@
    *b) 突變的程式執行後的結果(跟原本程式結果不一樣): 3
 ]]></system-out>
   </testcase>
-  <testcase name="testMutationTestingCoverage2" classname="com.ntou.testing.MutationTestingCoverageTest" time="0.001">
+  <testcase name="testMutationTestingCoverage2" classname="com.ntou.testing.MutationTestingCoverageTest" time="0">
     <system-out><![CDATA[
 －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
 【 Mutation Test Case 2 】

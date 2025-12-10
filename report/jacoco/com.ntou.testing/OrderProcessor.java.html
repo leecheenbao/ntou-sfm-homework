@@ -21,9 +21,9 @@ import java.util.Scanner;
 <span class="fc" id="L21">        String orderDetails = &quot;&quot;; // 訂單明細</span>
 
         // 主餐選擇迴圈
-        while (true) {
+<span class="nc" id="L24">        while (true) {</span>
             label97:
-            do {
+<span class="pc bpc" id="L26" title="1 of 2 branches missed.">            do {</span>
                 // 輸入驗證迴圈：確保輸入為 1-3
 <span class="pc bpc" id="L28" title="1 of 4 branches missed.">                while (mainDishChoice &lt; 1 || mainDishChoice &gt; 3) {</span>
 <span class="fc" id="L29">                    System.out.println(&quot;\n--- 請選擇主餐 ---&quot;);</span>
@@ -32,13 +32,13 @@ import java.util.Scanner;
 <span class="fc" id="L32">                    System.out.println(&quot;3. 吐司 (50元)&quot;);</span>
 <span class="fc" id="L33">                    System.out.print(&quot;請輸入選項數字 (1-3): &quot;);</span>
                     
-<span class="fc bfc" id="L35" title="All 2 branches covered.">                    if (scanner.hasNextInt()) {</span>
+<span class="pc bpc" id="L35" title="1 of 2 branches missed.">                    if (scanner.hasNextInt()) {</span>
 <span class="fc" id="L36">                        mainDishChoice = scanner.nextInt();</span>
 <span class="fc" id="L37">                        continue label97;</span>
                     }
 
-<span class="fc" id="L40">                    System.out.println(&quot;❗ 輸入錯誤，請輸入數字。&quot;);</span>
-<span class="fc" id="L41">                    scanner.next();</span>
+<span class="nc" id="L40">                    System.out.println(&quot;❗ 輸入錯誤，請輸入數字。&quot;);</span>
+<span class="nc" id="L41">                    scanner.next();</span>
                 }
 
                 // 根據選擇計算價格並記錄明細
@@ -48,15 +48,15 @@ import java.util.Scanner;
 <span class="fc bfc" id="L48" title="All 2 branches covered.">                } else if (mainDishChoice == 2) {</span>
 <span class="fc" id="L49">                    totalPrice += 40.0;</span>
 <span class="fc" id="L50">                    orderDetails = orderDetails + &quot;主餐: 蛋餅 (40元)\n&quot;;</span>
-                } else {
+<span class="fc" id="L51">                } else {</span>
 <span class="fc" id="L52">                    totalPrice += 50.0;</span>
 <span class="fc" id="L53">                    orderDetails = orderDetails + &quot;主餐: 吐司 (50元)\n&quot;;</span>
                 }
 
                 // 配餐選擇迴圈
-                while (true) {
+<span class="nc" id="L57">                while (true) {</span>
                     label81:
-                    do {
+<span class="pc bpc" id="L59" title="1 of 2 branches missed.">                    do {</span>
                         // 輸入驗證迴圈：確保輸入為 1-4
 <span class="pc bpc" id="L61" title="1 of 4 branches missed.">                        while (sideDishChoice &lt; 1 || sideDishChoice &gt; 4) {</span>
 <span class="fc" id="L62">                            System.out.println(&quot;\n--- 請選擇配餐 ---&quot;);</span>
@@ -66,13 +66,13 @@ import java.util.Scanner;
 <span class="fc" id="L66">                            System.out.println(&quot;4. 薯餅 (25元)&quot;);</span>
 <span class="fc" id="L67">                            System.out.print(&quot;請輸入選項數字 (1-4): &quot;);</span>
                             
-<span class="fc bfc" id="L69" title="All 2 branches covered.">                            if (scanner.hasNextInt()) {</span>
+<span class="pc bpc" id="L69" title="1 of 2 branches missed.">                            if (scanner.hasNextInt()) {</span>
 <span class="fc" id="L70">                                sideDishChoice = scanner.nextInt();</span>
 <span class="fc" id="L71">                                continue label81;</span>
                             }
 
-<span class="fc" id="L74">                            System.out.println(&quot;❗ 輸入錯誤，請輸入數字。&quot;);</span>
-<span class="fc" id="L75">                            scanner.next();</span>
+<span class="nc" id="L74">                            System.out.println(&quot;❗ 輸入錯誤，請輸入數字。&quot;);</span>
+<span class="nc" id="L75">                            scanner.next();</span>
                         }
 
                         // 根據選擇計算價格並記錄明細
@@ -95,11 +95,11 @@ import java.util.Scanner;
                         }
 
                         // 飲料選擇迴圈
-                        while (true) {
+<span class="nc" id="L98">                        while (true) {</span>
                             label65:
-                            do {
+<span class="pc bpc" id="L100" title="1 of 2 branches missed.">                            do {</span>
                                 // 輸入驗證迴圈：確保輸入為 1-4
-<span class="fc bfc" id="L102" title="All 4 branches covered.">                                while (drinkChoice &lt; 1 || drinkChoice &gt; 4) {</span>
+<span class="pc bpc" id="L102" title="1 of 4 branches missed.">                                while (drinkChoice &lt; 1 || drinkChoice &gt; 4) {</span>
 <span class="fc" id="L103">                                    System.out.println(&quot;\n--- 請選擇飲料 ---&quot;);</span>
 <span class="fc" id="L104">                                    System.out.println(&quot;1. 紅茶 (25元)&quot;);</span>
 <span class="fc" id="L105">                                    System.out.println(&quot;2. 柳橙汁 (35元)&quot;);</span>
@@ -126,7 +126,7 @@ import java.util.Scanner;
 <span class="fc bfc" id="L126" title="All 2 branches covered.">                                } else if (drinkChoice == 3) {</span>
 <span class="fc" id="L127">                                    totalPrice += 30.0;</span>
 <span class="fc" id="L128">                                    orderDetails = orderDetails + &quot;飲料: 豆漿 (30元)\n&quot;;</span>
-                                } else {
+<span class="fc" id="L129">                                } else {</span>
 <span class="fc" id="L130">                                    totalPrice += 45.0;</span>
 <span class="fc" id="L131">                                    orderDetails = orderDetails + &quot;飲料: 咖啡 (45元)\n&quot;;</span>
                                 }
@@ -141,15 +141,15 @@ import java.util.Scanner;
 <span class="fc" id="L141">                                System.out.println(&quot;==================================&quot;);</span>
 <span class="fc" id="L142">                                scanner.close();</span>
 <span class="fc" id="L143">                                return;</span>
-<span class="pc bpc" id="L144" title="1 of 4 branches missed.">                            } while (drinkChoice &gt;= 1 &amp;&amp; drinkChoice &lt;= 4);</span>
+<span class="pc bpc" id="L144" title="1 of 2 branches missed.">                            } while (drinkChoice &gt;= 1 &amp;&amp; drinkChoice &lt;= 4);</span>
 
-<span class="fc" id="L146">                            System.out.println(&quot;❗ 輸入無效，請輸入 1 到 4 之間的數字。&quot;);</span>
+<span class="nc" id="L146">                            System.out.println(&quot;❗ 輸入無效，請輸入 1 到 4 之間的數字。&quot;);</span>
                         }
-<span class="pc bpc" id="L148" title="2 of 4 branches missed.">                    } while (sideDishChoice &gt;= 1 &amp;&amp; sideDishChoice &lt;= 4);</span>
+<span class="pc bpc" id="L148" title="1 of 2 branches missed.">                    } while (sideDishChoice &gt;= 1 &amp;&amp; sideDishChoice &lt;= 4);</span>
 
 <span class="nc" id="L150">                    System.out.println(&quot;❗ 輸入無效，請輸入 1 到 4 之間的數字。&quot;);</span>
                 }
-<span class="pc bpc" id="L152" title="2 of 4 branches missed.">            } while (mainDishChoice &gt;= 1 &amp;&amp; mainDishChoice &lt;= 3);</span>
+<span class="pc bpc" id="L152" title="1 of 2 branches missed.">            } while (mainDishChoice &gt;= 1 &amp;&amp; mainDishChoice &lt;= 3);</span>
 
 <span class="nc" id="L154">            System.out.println(&quot;❗ 輸入無效，請輸入 1 到 3 之間的數字。&quot;);</span>
         }
